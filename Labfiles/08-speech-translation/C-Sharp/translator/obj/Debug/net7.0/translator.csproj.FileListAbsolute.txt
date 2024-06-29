@@ -110,3 +110,10 @@ C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\tr
 C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\obj\Debug\net7.0\translator.pdb
 C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\obj\Debug\net7.0\translator.genruntimeconfig.cache
 C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\obj\Debug\net7.0\ref\translator.dll
+C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\bin\Debug\net7.0\System.Windows.Extensions.dll
+C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Student\%\mslearn-ai-language\Labfiles\08-speech-translation\C-Sharp\translator\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll

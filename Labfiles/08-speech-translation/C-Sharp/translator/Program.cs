@@ -9,6 +9,7 @@ using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.CognitiveServices.Speech.Translation;
 
+using System.Media;
 
 namespace speech_translation
 {
@@ -69,10 +70,44 @@ namespace speech_translation
         {
             string translation = "";
 
+            // // Translate speech
+            // using AudioConfig audioConfig = AudioConfig.FromDefaultMicrophoneInput();
+            // using TranslationRecognizer translator = new TranslationRecognizer(translationConfig, audioConfig);
+            // Console.WriteLine("Speak now...");
+            // TranslationRecognitionResult result = await translator.RecognizeOnceAsync();
+            // Console.WriteLine($"Translating '{result.Text}'");
+            // translation = result.Translations[targetLanguage];
+            // Console.OutputEncoding = Encoding.UTF8;
+            // Console.WriteLine(translation);
+
             // Translate speech
+            string audioFile = "station.wav";
+            SoundPlayer wavPlayer = new SoundPlayer(audioFile);
+            wavPlayer.Play();
+            using AudioConfig audioConfig = AudioConfig.FromWavFileInput(audioFile);
+            using TranslationRecognizer translator = new TranslationRecognizer(translationConfig, audioConfig);
+            Console.WriteLine("Getting speech from file...");
+            TranslationRecognitionResult result = await translator.RecognizeOnceAsync();
+            Console.WriteLine($"Translating '{result.Text}'");
+            translation = result.Translations[targetLanguage];
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine(translation);
 
 
             // Synthesize translation
+            var voices = new Dictionary<string, string>
+            {
+                ["fr"] = "fr-FR-HenriNeural",
+                ["es"] = "es-ES-ElviraNeural",
+                ["hi"] = "hi-IN-MadhurNeural"
+            };
+            speechConfig.SpeechSynthesisVoiceName = voices[targetLanguage];
+            using SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer(speechConfig);
+            SpeechSynthesisResult speak = await speechSynthesizer.SpeakTextAsync(translation);
+            if (speak.Reason != ResultReason.SynthesizingAudioCompleted)
+            {
+                Console.WriteLine(speak.Reason);
+            }
 
 
         }
